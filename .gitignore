@@ -1,0 +1,10 @@
+*.swp
+.DS_Store
+
+# SublimeText project files
+*.sublime-workspace
+*.sublime-project
+
+#Debug files
+/*.txt
+/*.launch

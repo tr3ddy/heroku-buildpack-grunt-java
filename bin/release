@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# bin/release <build-dir>
+
+BUILD_DIR=$1
+
+cat <<EOF
+---
+config_vars:
+  PATH: /app/.jdk/bin:/usr/local/bin:/usr/bin:/bin
+  MAVEN_OPTS: -Xmx384m -Xss512k -XX:+UseCompressedOops 
+EOF
