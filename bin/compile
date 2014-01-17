@@ -181,8 +181,10 @@ export CPPPATH="$INCLUDE_PATH:$CPPPATH"
 echo "-----> Installing SASS"
 export GEM_HOME=$BUILD_DIR/.gem/ruby/1.9.1
 PATH="$GEM_HOME/bin:$PATH"
-LANG="en_US.UTF-8" gem install sass
-#HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
 
 # install dependencies with npm
 echo "-----> Installing dependencies with npm"
