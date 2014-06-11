@@ -139,8 +139,7 @@ if [ "${engine_requests["node"]}" == "" ]; then
   echo
 fi
 
-#NODE_VERSION=$(package_resolve_version "node")
-NODE_VERSION="0.10.21"
+NODE_VERSION=$(package_resolve_version "node")
 echo "Using Node.js version: ${NODE_VERSION}" | indent
 
 NPM_VERSION=$(package_resolve_version "npm")
@@ -189,9 +188,9 @@ HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
 
 # install dependencies with npm
 echo "-----> Installing dependencies with npm"
-run_npm "cache clean"
-#run_npm "install --production"
-run_npm "install"
+#run_npm "cache clean"
+run_npm "install --production"
+#run_npm "install"
 run_npm "rebuild"
 echo "Dependencies installed" | indent
 
