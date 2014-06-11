@@ -139,7 +139,8 @@ if [ "${engine_requests["node"]}" == "" ]; then
   echo
 fi
 
-NODE_VERSION=$(package_resolve_version "node")
+#NODE_VERSION=$(package_resolve_version "node")
+NODE_VERSION="0.10.21"
 echo "Using Node.js version: ${NODE_VERSION}" | indent
 
 NPM_VERSION=$(package_resolve_version "npm")
@@ -234,12 +235,12 @@ fi
 #create the cache dir if it doesn't exist
 mkdir -p $CACHE_DIR
 
-# create default system.properties 
+# create default system.properties
 if [ ! -f ${BUILD_DIR}/system.properties ]; then
   echo "java.runtime.version=1.6" > ${BUILD_DIR}/system.properties
 fi
 
-# install JDK 
+# install JDK
 javaVersion=$(detect_java_version ${BUILD_DIR})
 echo -n "-----> Installing OpenJDK ${javaVersion}..."
 install_java ${BUILD_DIR} ${javaVersion}
@@ -263,7 +264,7 @@ MAVEN_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-java/settings.xm
 
 echo -n "-----> Installing settings.xml..."
 if [ -f .m2/settings.xml ]; then
-  rm .m2/settings.xml 
+  rm .m2/settings.xml
 fi
 curl --silent --max-time 10 --location $MAVEN_SETTINGS_URL --output .m2/settings.xml
 echo " done"
