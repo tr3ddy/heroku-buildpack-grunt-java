@@ -189,6 +189,7 @@ HOME=$BUILD_DIR gem install sass --user-install --no-rdoc --no-ri
 
 # install dependencies with npm
 echo "-----> Installing dependencies with npm"
+run_npm "cache clean"
 #run_npm "install --production"
 run_npm "install"
 run_npm "rebuild"
