@@ -179,7 +179,7 @@ export CPPPATH="$INCLUDE_PATH:$CPPPATH"
 
 # install sass
 echo "-----> Installing SASS"
-export GEM_HOME=$BUILD_DIR/.gem/ruby/1.9.1
+export GEM_HOME=$BUILD_DIR/.gem/ruby/2.2.0
 PATH="$GEM_HOME/bin:$PATH"
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
